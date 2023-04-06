@@ -19,32 +19,42 @@ function showSlides() {
 
 
 
-
-
-
-
-
-
-
-
-const form = document.getElementById('my-form');
+const form = document.getElementById('myform');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault(); // prevent default form submission behavior
   
   // get form values
-  const name = document.getElementById('name').value;
+  const firstName = document.getElementById('firstname').value;
+  const lastName = document.getElementById('lastname').value;
   const email = document.getElementById('email').value;
+  const subject = document.getElementById('subject').value;
   
   // validate form
-  if (!name || !email) {
-    alert('Please fill in all fields');
-    return;
+  if (!firstName || !lastName || !email || !subject) {
+    alert('Please fill in all required fields');
+    return false;
   }
   
-  // submit form
-  submitForm(name, email);
+  // display form data in alert message
+  alert(`First Name: ${firstName}\nLast Name: ${lastName}\nEmail: ${email}\nSubject: ${subject}`);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
